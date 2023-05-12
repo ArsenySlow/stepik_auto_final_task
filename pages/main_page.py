@@ -11,16 +11,4 @@ class MainPage(BasePage):
     def should_be_login_url(self):
         self.browser.find_element(*MainPageLocators.LOGIN_LINK)
 
-    def should_be_login_page(self):
-        self.browser.find_element(*LoginPageLocators.LOG_URL)
 
-    def should_be_login_form(self):
-        self.browser.find_element(*LoginPageLocators.LOG_ID)
-        self.browser.find_element(*LoginPageLocators.LOG_PASS)
-        self.browser.find_element(*LoginPageLocators.LOG_ENTER)
-
-    def should_be_register_form(self):
-        self.browser.find_element(*LoginPageLocators.REG_MAIL)
-        self.browser.find_element(*LoginPageLocators.REG_PASS_1)
-        self.browser.find_element(*LoginPageLocators.REG_PASS_2)
-        self.browser.find_element(*LoginPageLocators.REG_ENTER)

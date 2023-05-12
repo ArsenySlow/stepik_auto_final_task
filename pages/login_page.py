@@ -10,7 +10,7 @@ class LoginPage(BasePage):
         self.should_be_register_form()
 
     def should_be_login_url(self):
-        assert self.is_element_present(*MainPageLocators.LOG_URL), "LOGIN_LINK is not presented"
+        assert self.is_element_present(*LoginPageLocators.LOG_URL), "LOGIN_LINK is not presented"
 
     def should_be_login_form(self):
         assert self.is_element_present(*LoginPageLocators.LOG_ID), "LOG_ID is not presented"
