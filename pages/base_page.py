@@ -1,6 +1,4 @@
 from selenium.common.exceptions import NoSuchElementException, NoAlertPresentException, TimeoutException
-from selenium.webdriver.common.by import By
-from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from .locators import *
@@ -51,7 +49,7 @@ class BasePage:
     # is_disappeared: будет ждать до тех пор, пока элемент не исчезнет.
     def is_disappeared(self, how, what, timeout=4):
         try:
-            WebDriverWait(self.browser, timeout, 1, TimeoutException). \
+            WebDriverWait(self.browser, timeout, 1). \
                 until_not(EC.presence_of_element_located((how, what)))
         except TimeoutException:
             return False
@@ -61,7 +59,7 @@ class BasePage:
     def go_to_login_page(self):
         self.browser.find_element(*BasePageLocators.LOGIN_LINK).click()
 
-        # return LoginPage(browser=self.browser, url=self.browser.current_url)
+        # return LoginPage(browser=self.browser, url=self.browser.current_url) # Вернет действующий URL
         # alert = self.browser.switch_to.alert      #ЕСЛИ ЕСТЬ АЛЕРТ
         # alert.accept()
 
