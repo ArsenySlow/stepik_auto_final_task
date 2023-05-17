@@ -1,5 +1,5 @@
 from .base_page import BasePage
-from .locators import LoginPageLocators
+from .locators import *
 
 
 class LoginPage(BasePage):
@@ -21,3 +21,10 @@ class LoginPage(BasePage):
         assert self.is_element_present(*LoginPageLocators.REG_PASS_1), "REG_PASS_1 is not presented"
         assert self.is_element_present(*LoginPageLocators.REG_PASS_2), "REG_PASS_2 is not presented"
         assert self.is_element_present(*LoginPageLocators.REG_ENTER), "REG_ENTER is not presented"
+
+    def register_new_user(self, email, password):
+        self.browser.find_element(*LoginPageLocators.REG_MAIL).send_keys(email)
+        self.browser.find_element(*LoginPageLocators.REG_PASS_1).send_keys(password)
+        self.browser.find_element(*LoginPageLocators.REG_PASS_2).send_keys(password)
+        self.browser.find_element(*LoginPageLocators.REG_ENTER).click()
+

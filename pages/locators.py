@@ -3,7 +3,11 @@ from selenium.webdriver.common.by import By
 
 class MainPageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
-
+    MAIN_BASKET = (By.XPATH, '/html/body/header/div[1]/div/div[2]/span/a')
+    EMPTY_BASKET = (By.XPATH, '/html/body/div[2]/div/div[3]/div[2]/p/a')
+    EMPTY_BASKET_TEXT = (By.XPATH, '/html/body/div[2]/div/div[3]/div[2]/p/a')
+    FULL_BASKET = (By.XPATH, '/html/body/div[2]/div/div[3]/div[2]/div[3]/div/div/a')
+    FULL_BASKET_TEXT = (By.XPATH, '/html/body/div[2]/div/div[3]/div[2]/div[3]/div/div/a')
 
 class LoginPageLocators:
     LOG_URL = (By.ID, 'login_link')
@@ -24,3 +28,5 @@ class ProductPageLocators:
 class BasePageLocators():
     LOGIN_LINK = (By.ID, 'login_link')
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
+
