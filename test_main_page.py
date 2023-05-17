@@ -20,7 +20,7 @@ class TestLoginFromMainPage():
         page = MainPage(browser,
                         link)  # инициализируем Page Object, передаем в конструктор экземпляр драйвера и url адрес
         page.open()  # открываем страницу
-        page.should_be_login_link()  # выполняем метод страницы — поиск недействительной ссылки на страницу логина
+        page.should_be_login_link()
 
 
 def test_authorisation_is_visible(browser):
@@ -33,8 +33,8 @@ def test_authorisation_is_visible(browser):
 def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
     link = "http://selenium1py.pythonanywhere.com/"
     page = MainPage(browser, link)  # инициализируем Page Object, передаем в конструктор экземпляр драйвера и url адрес
-    page.open()
-    page.go_to_basket()
+    page.open()     # открываем страницу
+    page.go_to_basket()     # переходим в корзину
     page = BasketPage(browser, link)
     page.should_not_be_added_to_basket()
     page.should_not_be_text_of_adding_to_basket()
