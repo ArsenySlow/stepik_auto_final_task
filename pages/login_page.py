@@ -1,5 +1,4 @@
 from .base_page import BasePage
-from .locators import MainPageLocators
 from .locators import LoginPageLocators
 
 
@@ -22,5 +21,3 @@ class LoginPage(BasePage):
         assert self.is_element_present(*LoginPageLocators.REG_PASS_1), "REG_PASS_1 is not presented"
         assert self.is_element_present(*LoginPageLocators.REG_PASS_2), "REG_PASS_2 is not presented"
         assert self.is_element_present(*LoginPageLocators.REG_ENTER), "REG_ENTER is not presented"
-
-

@@ -1,9 +1,11 @@
 from selenium.webdriver.common.by import By
 
-class MainPageLocators():
+
+class MainPageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
 
-class LoginPageLocators():
+
+class LoginPageLocators:
     LOG_URL = (By.ID, 'login_link')
     LOG_ID = (By.ID, 'id_login-username')
     LOG_PASS = (By.ID, 'id_login-password')
